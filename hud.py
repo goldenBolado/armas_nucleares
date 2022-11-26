@@ -31,6 +31,20 @@ Escolha: '''))
     if user_input == 2:
         mostrarTodos()
 
+    if user_input == 3:
+        print('Como você deseja efetuar o pagamento? ')
+        print('1 - Cartão')
+        print('2 - Dinheiro')
+        pag = int(input(''))
+
+        if pag == 1:
+            print('O pagamento foi eftuado')
+
+        if pag == 2:
+            dinheiro = float(input('Quanto você deseja pagar? '))
+            troco = dinheiro - total
+            print('O troco é: ',troco)
+  
     if user_input == 4:
         while True:
             try:
@@ -41,10 +55,3 @@ Escolha: '''))
             else:
                 removerProd(id)
                 break
-
-
-#if user_input == 3:
-    #print('Compra finalizada foda')
-    #   Parte do cauã
-    #   Tambem parte do total
-
