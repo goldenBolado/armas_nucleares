@@ -1,15 +1,16 @@
 from armas_nucleares import adcProduto, mostrarTodos, removerProd
 global indice
+total = 0
 while True:
     print(f'''{"Lojinha do tadeu":-^50}''')
     user_input = int(input('''[1] Adicionar Produto e Preço
 [2] Ver carrinho
 [3] Finalizar compra
 [4] Retirar produto
+[5] Finalizar programa
 
 Escolha: '''))
     if user_input == 1:
-        total = 0
         while True:
             produto_input = input('Insira o Nome do produto: ')
             produto_sem_espaco = produto_input.replace(' ', '')
@@ -24,7 +25,7 @@ Escolha: '''))
                 print('insira apenas numeros!')
             else:
                 total += preco_input
-                print('Agradecemos pela sua compra!')
+                print('Produto adicionado no carrinho.')
             break
         adcProduto(produto_input, preco_input)
 
@@ -38,13 +39,13 @@ Escolha: '''))
         pag = int(input(''))
 
         if pag == 1:
-            print('O pagamento foi eftuado')
+            print('O pagamento no cartão foi eftuado.')
 
         if pag == 2:
             dinheiro = float(input('Quanto você deseja pagar? '))
             troco = dinheiro - total
             print('O troco é: ',troco)
-  
+
     if user_input == 4:
         while True:
             try:
@@ -55,3 +56,6 @@ Escolha: '''))
             else:
                 removerProd(id)
                 break
+    if user_input == 5:
+        print('Programa Finalizado.')
+        break

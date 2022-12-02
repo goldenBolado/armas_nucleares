@@ -9,7 +9,7 @@ def adcProduto(produto_input, preco_input):
 
 def mostrarTodos():
     for linhas in matriz:
-        print(' '.join(map(str, linhas)))
+        print('  '.join(map(str, linhas)))
 
 def removerProd(id):
     global indice
